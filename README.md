@@ -40,7 +40,8 @@ O código original que foi criado nas aulas da imersão você encontra nesse [re
 Você pode testar minha API da Nasa utilizando essas URLs:
 
 https://api.diegonassula.com/api-nasa/pictures
-
+  
+----------------------------------------------------
 <strong>Metódo HTTP: GET</strong>
 
 URL: https://api.diegonassula.com/api-nasa/pictures
