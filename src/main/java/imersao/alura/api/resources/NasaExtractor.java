@@ -15,35 +15,26 @@ public class NasaExtractor {
         List<Map<String, String>> listPictures = parser.parse(json);
 
         List<Picture> pictures = new ArrayList<>();
+        
 
         //fill the list of pictures
         for (Map<String, String> infos : listPictures) {
             
         	/*
+        	 * Table fields
         	id
         	autor
         	description
         	hdUrl
         	title
         	*/
-        	String jsonPost = "{\"autor\":\""+infos.get("copyright")+"\",\"description\":\""+infos.get("explanation")+"\",\"hdUrl\":\""+infos.get("hdurl")+"\",\"title\":"+infos.get("title")+"}";
+        	
+        	String jsonPost = "{\"autor\":\""+infos.get("copyright")+"\",\"description\":\""+infos.get("explanation")+"\",\"hdUrl\":\""+infos.get("hdurl")+"\",\"title\":\""+infos.get("title").replace(":", "-")+"\"}";
         	
         	ClientHttp http = new ClientHttp();
-    		http.saveData(jsonPost);
+    		
+        	http.saveData(jsonPost);
         	
-        	System.out.println(infos.get("copyright"));
-        	System.out.println(infos.get("explanation"));
-        	System.out.println(infos.get("hdurl"));
-        	System.out.println(infos.get("title"));
-        	
-        	
-        	/*
-        	String titulo = infos.get("title");
-            String urlImagem = atributos.get("url");
-
-            var conteudo = new Conteudo(titulo, urlImagem);
-
-            conteudos.add(conteudo);*/
         }
         return "1";
     }

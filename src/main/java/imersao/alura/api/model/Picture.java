@@ -1,9 +1,12 @@
 package imersao.alura.api.model;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Picture {
@@ -12,6 +15,8 @@ public class Picture {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String autor;
+	
+	@Lob @Basic(fetch=FetchType.LAZY)
 	private String description;
 	private String hdUrl;
 	private String title;

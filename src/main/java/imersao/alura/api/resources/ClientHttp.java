@@ -33,8 +33,9 @@ public class ClientHttp {
 	public void saveData(String json) {
 
 		try {
-
-			URL url = new URL("http://localhost:8080/api-nasa/pictures");
+			
+			//Antes de rodar trocar a url para a da sua applicação.
+			URL url = new URL("https://api.diegonassula.com/api-nasa/pictures");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
@@ -45,7 +46,7 @@ public class ClientHttp {
 			os.write(json.getBytes());
 			os.flush();
 
-			if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
 				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
 			}
 
