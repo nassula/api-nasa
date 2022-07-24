@@ -36,6 +36,58 @@ Como é feito isso? Simples, o programa acessa a API da Nasa, extrai as informa�
 O código original que foi criado nas aulas da imersão você encontra nesse [repositório](https://github.com/nassula/alura-imersao-java/ "repositório").
 </p>
 
+<p>
+Você pode testar minha API da Nasa utilizando essas URLs:
+
+https://api.diegonassula.com/api-nasa/pictures
+
+<strong>Metódo HTTP: GET</strong>
+
+URL: https://api.diegonassula.com/api-nasa/pictures
+
+Lista todas as imagens da base
+
+
+----------------------------------------------------
+<strong>Metódo HTTP: POST</strong>
+
+URL: https://api.diegonassula.com/api-nasa/pictures
+
+Adiciona uma nova entrada na base, seguindo o JSON abaixo:
+
+{
+  "autor": "nomeautor",
+  "description": "descriçãodaimagens",
+  "hdUrl": "urldaimagem",
+  "title": "titulo da imagem"
+}
+
+
+----------------------------------------------------
+<strong>Metódo HTTP: PUT</strong>
+
+URL: https://api.diegonassula.com/api-nasa/pictures
+
+Altera uma entrada da base, seguindo o JSON abaixo:
+
+{
+  "id": "id",
+  "autor": "nomeautor",
+  "description": "descriçãodaimagens",
+  "hdUrl": "urldaimagem",
+  "title": "titulo da imagem"
+}
+
+----------------------------------------------------
+<strong>Metódo HTTP: DELETE</strong>
+
+URL: https://api.diegonassula.com/api-nasa/pictures/id
+
+Apaga uma entrada da base de dados utilizando o ID
+
+
+</p>
+
 Qualquer dúvida sobre minha implementação, entre em contato!
 
 
